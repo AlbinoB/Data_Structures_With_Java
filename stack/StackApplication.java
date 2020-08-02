@@ -2,6 +2,15 @@ package stack;
 
 import java.util.Scanner;
 
+
+/*
+ * 
+ * The stack is implemented to be as generic as possible
+ * One can create the stack to be of any type.
+ * Follow the examples given below to match your use case.
+ * 
+ * */
+
 public class StackApplication {
 	
 
@@ -26,7 +35,7 @@ public class StackApplication {
 			switch(choice) {
 				case 1:{
 					data=s.peek();
-					if(data==null)
+					if(data==null)//stack is empty
 						System.out.println("Stack is empty");
 					else
 						System.out.println("Top element is: "+data);
@@ -34,7 +43,7 @@ public class StackApplication {
 				}
 				case 2:{
 					data=s.pop();
-					if(data==null)
+					if(data==null)//stack is empty
 						System.out.println("Stack is empty");
 					else
 					System.out.println("Element popped: "+data);
@@ -56,7 +65,7 @@ public class StackApplication {
 				
 				
 				default:{
-					System.out.println("invalid choice!");
+					System.out.println("Invalid choice!");
 				}
 			}
 			
