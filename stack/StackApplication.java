@@ -16,7 +16,7 @@ public class StackApplication {
 
 	public static void main(String[] args) {
 		
-		StackContainer<String> s=new StackContainer<String>();//<Specifiy the data type of the stack >
+		StackOperations<String> s=new StackOperations<String>();//<Specifiy the data type of the stack >
 		Scanner scanner=new Scanner(System.in);
 		int choice=-1;
 		String data=new String("");//data type must match the stack data type
