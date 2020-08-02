@@ -7,14 +7,16 @@ public class StackApplication {
 
 	public static void main(String[] args) {
 		
-		StackContainer s=new StackContainer();
+		StackContainer<String> s=new StackContainer<String>();//<Specifiy the data type of the stack >
 		Scanner scanner=new Scanner(System.in);
 		int choice=-1;
-		int data=-1;
+		String data=new String("");//data type must match the stack data type
+		//Integer data=new Integer(0);//eg 1.
+		//Float data=new Float(0.0);//eg 2.
 		
 		do {
 			
-			System.out.println("1.Peek");
+			System.out.println("\n\n\n1.Peek");
 			System.out.println("2.Pop");
 			System.out.println("3.Push");
 			System.out.println("4.Display full stack \n:");
@@ -24,7 +26,7 @@ public class StackApplication {
 			switch(choice) {
 				case 1:{
 					data=s.peek();
-					if(data==-1)
+					if(data==null)
 						System.out.println("Stack is empty");
 					else
 						System.out.println("Top element is: "+data);
@@ -32,7 +34,7 @@ public class StackApplication {
 				}
 				case 2:{
 					data=s.pop();
-					if(data==-1)
+					if(data==null)
 						System.out.println("Stack is empty");
 					else
 					System.out.println("Element popped: "+data);
@@ -40,7 +42,10 @@ public class StackApplication {
 				}
 				case 3:{
 					System.out.print("Enter element to be pushed:");
-					data=scanner.nextInt();
+					data=scanner.next();//change this depending on the type accepted for the stack type
+					//data=scanner.next() ->String
+					//data=scanner.nextInt() ->Integer
+					//data=scanner.nextFloat() ->Float
 					s.push(data);
 					break;
 				}

@@ -3,16 +3,16 @@ package stack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StackContainer{
+public class StackContainer<T>{
 	
 	
-	private List<Node> stack=new ArrayList<Node>();
-	private Node top=null;
+
+	private Node<T> top=null;
 	
 	
-	public void push(int data) {
+	public void push(T data) {
 		
-		Node newNode=new Node(data);
+		Node<T> newNode=new Node<T>(data);
 		
 		if(top==null) {
 			top=newNode;
@@ -23,15 +23,15 @@ public class StackContainer{
 	
 	}
 	
-	public int pop() {
+	public T pop() {
 		
 		if(top==null) {
-			return -1;//stack is empty
+			return null;//stack is empty
 		}else {
-			Node temp=top;
+			Node<T> temp=top;
 			
 			
-			int data=top.data;
+			T data=(T) top.data;
 			top=top.next;
 			
 			temp=null;//free memory
@@ -41,11 +41,11 @@ public class StackContainer{
 	}
 	
 	
-	public int peek() {
+	public T peek() {
 		if(top==null) {
-			return -1;//stack is empty
+			return null;//stack is empty
 		}else {
-			return top.data;//return top element of stack 
+			return (T) top.data;//return top element of stack 
 		}
 		
 	}
@@ -53,12 +53,12 @@ public class StackContainer{
 	
 	public void displayStack() {
 		
-		if(peek()==-1) {
+		if(peek()==null) {
 			System.out.println("stack is empty");
 			return;
 		}
 		
-		Node temp=top;
+		Node<T> temp=top;
 		
 		while(temp!=null)
 		{

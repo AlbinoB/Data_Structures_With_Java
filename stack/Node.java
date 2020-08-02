@@ -1,11 +1,11 @@
 package stack;
 
-class Node{
+class Node<T>{
 
-	int data;
-	Node next;
+	T data;
+	Node<T> next;
 	
-	public Node(int data) {
+	public Node(T data) {
 		this.data=data;
 	}
 }
