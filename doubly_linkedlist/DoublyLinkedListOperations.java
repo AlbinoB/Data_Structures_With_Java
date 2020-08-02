@@ -139,17 +139,30 @@ public class DoublyLinkedListOperations<T> {
 			
 			Node<T> temp=head;
 			
-			/*while(temp!=null) {
-				System.out.println(temp.data);
-				temp=temp.next;
-			}*/
-			
-			while(temp.next!=null) {
+			while(temp!=null) {
 				System.out.println(temp.data);
 				temp=temp.next;
 			}
 			
-			System.out.println(temp.data);
+		}
+		
+		
+	}
+	
+	
+void displayDoublyLinkedListReverse() {
+		
+		if(head==null) {
+			printEmpty();
+			return;
+		}else {
+			
+			Node<T> temp=head;
+			
+			
+			while(temp.next!=null) {
+				temp=temp.next;
+			}
 			
 			
 			while(temp!=null) {
@@ -158,11 +171,11 @@ public class DoublyLinkedListOperations<T> {
 			}
 			
 			
-			
 		}
 		
 		
 	}
+	
 	
 	void printEmpty() {
 		System.out.println("DoublyLinkedList empty!!");

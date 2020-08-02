@@ -27,6 +27,7 @@ public class DoublyLinkedListApplication {
 			System.out.println("4.Delete by value:");
 			System.out.println("5.Is Empty:");
 			System.out.println("6.Display full List \n:");
+			System.out.println("7.Display full List reverse order \n:");
 			
 			choice=scanner.nextInt();
 			
@@ -89,6 +90,10 @@ public class DoublyLinkedListApplication {
 					break;
 				}
 				
+				case 7:{
+					doublyLinkedList.displayDoublyLinkedListReverse();
+					break;
+				}
 				
 				default:{
 					System.out.println("Invalid choice!");
