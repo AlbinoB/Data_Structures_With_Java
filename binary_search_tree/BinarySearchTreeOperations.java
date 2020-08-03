@@ -121,8 +121,32 @@ public class BinarySearchTreeOperations{
 		
 	}
 	
+	int minOfTree(Node root) {
+		
+		if(root==null){
+			return -1;
+		}
+		
+		if(root.left==null) {
+			return root.data;
+		}else {
+			return (minOfTree(root.left));
+		}
+		
+	}
 	
-	
+	int maxOfTree(Node root) {
+		
+		if(root==null){
+			return -1;
+		}
+		
+		if(root.right==null) {
+			return root.data;
+		}else {
+			return (maxOfTree(root.right));
+		}
+	}
 	
 	
 }

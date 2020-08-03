@@ -20,6 +20,8 @@ public class BinarySearchTreeApplication {
 			System.out.println("3. Preorder");
 			System.out.println("4. Inorder");
 			System.out.println("5. Postorder");
+			System.out.println("6. Min of tree");
+			System.out.println("7. Max of Tree");
 			System.out.println("0. Exit");
 			
 			choice=scanner.nextInt();
@@ -61,6 +63,26 @@ public class BinarySearchTreeApplication {
 					bst.postorder(bst.root);
 					break;
 				}
+				case 6:{
+					
+					data=bst.minOfTree(bst.root);
+					if(data==-1)
+						System.out.println("Tree is empty");
+					else
+						System.out.println("Min of tree is :"+data);
+					
+					break;
+				}
+				case 7:{
+					data=bst.maxOfTree(bst.root);
+					if(data==-1)
+						System.out.println("Tree is empty");
+					else
+						System.out.println("Max of tree is :"+data);
+					
+					break;
+				}
+				
 				default:{
 					System.out.println("Wrong input!");
 					break;
