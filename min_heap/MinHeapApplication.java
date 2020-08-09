@@ -6,15 +6,53 @@ public class MinHeapApplication {
 
 		MinHeapOperations heapObj=new MinHeapOperations();
 		
-		heapObj.insertNumber(10);
-		heapObj.insertNumber(20);
-		heapObj.insertNumber(30);
+		heapObj.insertNumber(1);
 		heapObj.insertNumber(5);
+		heapObj.insertNumber(1);
+		heapObj.insertNumber(8);
 		heapObj.insertNumber(6);
+		heapObj.insertNumber(2);
+		heapObj.insertNumber(2);
+		heapObj.insertNumber(13);
+		heapObj.insertNumber(12);
+		heapObj.insertNumber(11);
+		heapObj.insertNumber(7);
+		heapObj.insertNumber(2);
+		heapObj.insertNumber(15);
+		heapObj.insertNumber(3);
+		heapObj.insertNumber(10);
+		
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		
+		
+		heapObj.insertNumber(1);
+		
+		heapObj.insertNumber(12);
+		heapObj.insertNumber(11);
 		heapObj.insertNumber(0);
 		
-		
-		
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
+		System.out.println("\n Element polled:"+heapObj.poll());
 		
 		
 		

@@ -11,7 +11,7 @@ public class MinHeapOperations {
 	
 	void insertNumber(int data) {
 		heap.add(++lastInsertedIndex, data);
-		heapify();//to maintain the heap invariant
+		bubbleUpFrom(lastInsertedIndex);//to maintain the heap invariant
 		displayHeap();
 	}
 	
@@ -22,17 +22,81 @@ public class MinHeapOperations {
 		}
 		
 	}
-
-
-	private void heapify() {
+	
+	int findValue(int data) {
 		
-		if(lastInsertedIndex==0) {
+		
+		
+		return -1;
+		
+	}
+	
+	int poll() {
+		
+		if(lastInsertedIndex==-1)
+			return -1;
+		
+		int elementRemoved=heap.get(0);
+		
+		heap.set(0, heap.get(lastInsertedIndex));
+		
+		heap.remove(lastInsertedIndex--);
+		
+		bubbleDownFrom(0);
+		
+		return elementRemoved;
+		
+	}
+	
+	
+	private void bubbleDownFrom(int bubbleIndex) {
+		
+		if(bubbleIndex==lastInsertedIndex) {
+			return;// heap invariant satisfied
+		}
+			
+			
+			int leftChildNodeIndex=2*bubbleIndex+1;
+			int rightChildNodeIndex=2*bubbleIndex+2;
+			
+			try {
+				
+				
+				if(heap.get(bubbleIndex)>heap.get(leftChildNodeIndex)||heap.get(bubbleIndex)>heap.get(rightChildNodeIndex)) {
+					
+					try {
+						if(heap.get(leftChildNodeIndex)<=heap.get(rightChildNodeIndex)) {
+							swapNodeValueWithParent(bubbleIndex,leftChildNodeIndex);
+							bubbleDownFrom(leftChildNodeIndex);
+						}else {
+							swapNodeValueWithParent(bubbleIndex,rightChildNodeIndex);
+							bubbleDownFrom(rightChildNodeIndex);
+						}
+					}catch(Exception e){
+						swapNodeValueWithParent(bubbleIndex,leftChildNodeIndex);
+						
+					}
+					
+				}
+				
+				
+				
+			}catch(Exception e) {
+				
+			}
+	
+	}
+
+
+	private void bubbleUpFrom(int bubbleIndex) {
+		
+		if(bubbleIndex==0) {
 			return;// heap invariant satisfied, root
 		}else {
 			
 			
-			int parentIndex=getParentIndexOfNode(lastInsertedIndex);
-			int currentNodeIndex=lastInsertedIndex;
+			int parentIndex=getParentIndexOfNode(bubbleIndex);
+			int currentNodeIndex=bubbleIndex;
 			
 			while(heap.get(currentNodeIndex)<heap.get(parentIndex)&&currentNodeIndex!=0){//loop until heap invariant is not satisfied
 				//swap
