@@ -55,6 +55,19 @@ public class MinHeapApplication {
 		System.out.println("\n Element polled:"+heapObj.poll());
 		
 		
+		heapObj.insertNumber(0);
+		heapObj.insertNumber(5);
+		heapObj.insertNumber(1);
+		heapObj.insertNumber(8);
+		heapObj.insertNumber(6);
+		
+		System.out.println("\n Element present at:"+heapObj.getIndexOf(8));
+		
+		heapObj.deleteElement(0);
+		
+		
+		
+		
 		
 	}
 

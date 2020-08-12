@@ -23,13 +23,53 @@ public class MinHeapOperations {
 		
 	}
 	
-	int findValue(int data) {
+	int getIndexOf(int data) {
 		
-		
+		for(int i=0; i<lastInsertedIndex; i++) {
+			
+			if(data==heap.get(i)) {
+				return i;
+			}
+		}
 		
 		return -1;
 		
 	}
+	
+	
+	void deleteElement(int data) {
+		
+		
+		int indexOfElement=getIndexOf(data);
+		if(indexOfElement==-1) {
+			System.out.println("Element not found!");
+			return; 
+		}
+		
+		if(indexOfElement==0) {//root element then poll
+			poll();
+			
+			System.out.println("Element deleted:"+data);
+			
+			displayHeap();
+			
+			return;
+		}
+		
+		swapNodeValues(indexOfElement, lastInsertedIndex);//swap
+		
+		//delete last node
+		heap.remove(lastInsertedIndex--);
+		
+		bubbleUpFrom(indexOfElement);
+		
+		System.out.println("Element deleted:"+data);
+		
+		displayHeap();
+		
+	}
+	
+
 	
 	int poll() {
 		
@@ -66,14 +106,14 @@ public class MinHeapOperations {
 					
 					try {
 						if(heap.get(leftChildNodeIndex)<=heap.get(rightChildNodeIndex)) {
-							swapNodeValueWithParent(bubbleIndex,leftChildNodeIndex);
+							swapNodeValues(bubbleIndex,leftChildNodeIndex);
 							bubbleDownFrom(leftChildNodeIndex);
 						}else {
-							swapNodeValueWithParent(bubbleIndex,rightChildNodeIndex);
+							swapNodeValues(bubbleIndex,rightChildNodeIndex);
 							bubbleDownFrom(rightChildNodeIndex);
 						}
 					}catch(Exception e){
-						swapNodeValueWithParent(bubbleIndex,leftChildNodeIndex);
+						swapNodeValues(bubbleIndex,leftChildNodeIndex);
 						
 					}
 					
@@ -101,7 +141,7 @@ public class MinHeapOperations {
 			while(heap.get(currentNodeIndex)<heap.get(parentIndex)&&currentNodeIndex!=0){//loop until heap invariant is not satisfied
 				//swap
 		
-				swapNodeValueWithParent(currentNodeIndex,parentIndex);
+				swapNodeValues(currentNodeIndex,parentIndex);
 				
 				currentNodeIndex=parentIndex;
 				parentIndex=getParentIndexOfNode(currentNodeIndex);
@@ -134,16 +174,16 @@ public class MinHeapOperations {
 	}
 	
 	
-	//swap child value with parent
-	void swapNodeValueWithParent(int currentNodeIndex,int parentIndex){
+	//swap node values
+	void swapNodeValues(int currentNodeIndex,int withNodeIndex){
 		
 		int currentNodeValue=heap.get(currentNodeIndex);
-		int parentNodeValue=heap.get(parentIndex);
+		int nextNodeValue=heap.get(withNodeIndex);
 		
 		
 		
-		heap.set(currentNodeIndex, parentNodeValue);
-		heap.set(parentIndex, currentNodeValue);
+		heap.set(currentNodeIndex, nextNodeValue);
+		heap.set(withNodeIndex, currentNodeValue);
 		
 		
 	}
