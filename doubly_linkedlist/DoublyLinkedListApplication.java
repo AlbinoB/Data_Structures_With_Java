@@ -80,7 +80,7 @@ public class DoublyLinkedListApplication {
 					if(doublyLinkedList.isEmpty()) {
 						System.out.println("DoublyLinkedList is empty");
 					}else {
-						System.out.println("DdoublyLinkedList is not empty");
+						System.out.println("DoublyLinkedList is not empty");
 					}
 					break;
 				}

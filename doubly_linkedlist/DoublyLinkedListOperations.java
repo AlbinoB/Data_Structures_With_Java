@@ -24,6 +24,7 @@ public class DoublyLinkedListOperations<T> {
 			
 			if(position==0) {
 				newNode.next=head;
+				newNode.prev=null;
 				head.prev=newNode;
 				head=newNode;
 				return;
